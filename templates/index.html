@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Meal Tracker</title>
+</head>
+<body>
+    <h1>Meal Tracker</h1>
+    <form method="post">
+        <label>Date: <input type="date" name="date" required></label><br>
+        <label>Time: <input type="time" name="time" required></label><br>
+        <label>Meal Type:
+            <select name="meal_type">
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+                <option value="Snack">Snack</option>
+            </select>
+        </label><br>
+        <label>Description:<br>
+            <textarea name="description" rows="3" cols="40" required></textarea>
+        </label><br>
+        <input type="submit" value="Add Meal">
+    </form>
+    <h2>Meals</h2>
+    <table border="1">
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Meal Type</th>
+            <th>Description</th>
+        </tr>
+        {% for meal in meals %}
+        <tr>
+            <td>{{ meal['date'] }}</td>
+            <td>{{ meal['time'] }}</td>
+            <td>{{ meal['meal_type'] }}</td>
+            <td>{{ meal['description'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
