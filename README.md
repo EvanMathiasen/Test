@@ -23,3 +23,7 @@ The database file `meals.db` is stored inside the container. If you want to acce
 ```bash
 docker run -d -p 5000:5000 -v $(pwd)/data:/app meal-tracker
 ```
+
+## Additional Resources
+
+- [NutriMind Codex Prompt](docs/codex_prompt.md): A comprehensive system design and endpoint specification for an AI-powered nutrition coach that integrates Apple Health data with food tracking.
